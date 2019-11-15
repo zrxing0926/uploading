@@ -1,7 +1,16 @@
 import request from '../utils/request';
 
-function govList() {
+export function govList() {
   return request('/api/main/govList');
 }
 
-export default govList
+
+export function addGov(prams){
+  return request('/api/main/addGov',{
+    body: JSON.stringify(params),
+    headers:{
+      'content-type':'application/json'
+    },
+    method: 'POST'
+  })
+}
